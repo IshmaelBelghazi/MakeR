@@ -11,7 +11,7 @@ MakeR is a Makefile with the aim of easing development of R packages using C Nat
 + (Optional) =bear=. Only used to generate Json compilation databases.
 
 ** Installation
-1. Put the Makefile in the root of your project/project folder. 
+1. Put the Makefile in the root of your package/project folder. 
 2. Run =make= with the desired target.
 * Usage and examples
 ** Diagnostic and Variables
