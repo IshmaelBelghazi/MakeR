@@ -1,20 +1,14 @@
 ##################################################
-# R C/CUDA extension Makefile 0.2.0              #
-# -------------------------------                #
+# MakeR 0.2.0                                    #
+# -----------                                    #
 # Author: Mohamed Ishmael Diwan Belghazi (2015)  #
 # Email:  ishmael.belghazi@gmail.com             #
 # ################################################
 #                                                #
 # Usage:                                         #
 # ------                                         #
-#                                                #
-# make all: to compile and link all C files      #
-# defined in SOURCES to shared libs              #
-# make clean: to clean all intermediate files    #
-# make diagnostic: to print diagnostic screen    #
-# make SOURCES=foo.c bar.c: to pass              #
-# file names for compilation and linking         #
-##################################################
+# See README                                     #
+# ################################################
 ###############################
 ## R configuration Variables ##
 ###############################
