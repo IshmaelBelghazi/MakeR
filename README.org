@@ -1,0 +1,109 @@
+#+TITLE: MakeR
+
+* What is it?
+MakeR is a Makefile with the aim of easing development of R packages using C Native extension.
+* Setup
+*** Prerequisites
++ =R=
++ =devtools=
++ (Optional) =covr=. Code coverage analysis R package.
++ (Optional) =valgrind=. To detect memory leaks.
++ (Optional) =bear=. Only used to generate Json compilation databases.
+
+** Installation
+1. Put the Makefile in the root of your project/project folder. 
+2. Run =make= with the desired target.
+* Usage and examples
+** Diagnostic and Variables
+=diagnostic= Outputs various R related environment variables.
+#+BEGIN_SRC sh
+make diagnostic
+#+END_SRC
+** Native extensions
+*** Building native extensions
+Builds the native extensions, usually in the =./src= folder, as shared libraries.
+MakeR can look for native extensions in different folder by specifying =SRC_PATH= . 
+For instance,
+#+BEGIN_SRC sh
+make SRC_PATH=.
+#+END_SRC
+Will look for source files in the current folder.
+*** Generating Json compilation database
+Listen to the compilation commands using bear and generates a Json compilation database.
+#+BEGIN_SRC 
+make compdb
+#+END_SRC
+** Cleaning
+=clean= removes all compilation objects.
+#+BEGIN_SRC sh
+make clean
+#+END_SRC
+=veryclean= removes compiled shared library as well.
+#+BEGIN_SRC sh
+make veryclean
+#+END_SRC
+** R package
+*** Building the package
+#+BEGIN_SRC sh
+make build/R
+#+END_SRC
+*** Rebuilding the package
+#+BEGIN_SRC sh
+make rebuild/R
+#+END_SRC
+*** Reloading the package
+#+BEGIN_SRC sh
+make reload
+#+END_SRC
+*** Checking the package
+=check= checks documentation, examples or everything.
+#+BEGIN_SRC sh
+make check/docs
+#+END_SRC
+#+BEGIN_SRC sh
+make check/examples
+#+END_SRC
+#+BEGIN_SRC sh
+make check
+#+END_SRC
+It is also possible to run =check= following the CRAN standards.
+#+BEGIN_SRC sh
+make check/cran
+#+END_SRC
+*** Code coverage
+=coverage= runs a shiny interface to analyze code coverage.
+#+BEGIN_SRC sh
+make coverage
+#+END_SRC
+*** Linting
+=lint/R= performs static analysis to check if the package R code follows the standards.
+#+BEGIN_SRC sh
+make lint/R
+#+END_SRC
+*** Testing
+=test= runs tests in tests folder without rebuilding the package.
+#+BEGIN_SRC sh
+make test/fast
+#+END_SRC
+Runs tests in tests folder after rebuilding the package.
+#+BEGIN_SRC sh
+make test
+#+END_SRC
+Runs custom tests in the =test_custom= file.
+#+BEGIN_SRC sh
+make test/custom
+#+END_SRC
+Runs all tests including custom tests.
+#+BEGIN_SRC sh
+make test/all
+#+END_SRC
+** Documentation
+*** Documenting the package
+#+BEGIN_SRC sh:
+make document
+#+END_SRC
+*** Building vignettes
+#+BEGIN_SRC sh
+make vignette
+#+END_SRC
+     
