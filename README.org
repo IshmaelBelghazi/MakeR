@@ -30,7 +30,7 @@ make SRC_PATH=.
 Will look for source files in the current folder.
 *** Generating Json compilation database
 Listen to the compilation commands using bear and generates a Json compilation database.
-#+BEGIN_SRC 
+#+BEGIN_SRC sh
 make compdb
 #+END_SRC
 ** Cleaning
@@ -99,7 +99,7 @@ make test/all
 #+END_SRC
 ** Documentation
 *** Documenting the package
-#+BEGIN_SRC sh:
+#+BEGIN_SRC sh
 make document
 #+END_SRC
 *** Building vignettes
