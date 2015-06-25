@@ -1,7 +1,7 @@
 #+TITLE: MakeR
 
 * What is it?
-MakeR is a Makefile with the aim of easing development of R packages using C Native extension.
+MakeR is a Makefile to help development of R packages using C Native extension.
 * Setup
 *** Prerequisites
 + =R=
