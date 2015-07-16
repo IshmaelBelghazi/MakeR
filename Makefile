@@ -25,7 +25,7 @@ R_getconf=$(shell $(R_CONF) $(1))
 ###############################
 ## C Configuration variables ##
 ###############################
-##,----------------------------
+##,----------------------------a
 ##| Getting pre-processor flags
 ##`----------------------------
 R_INCLUDE_FLAG=$(call R_getconf, --cppflags)
@@ -233,6 +233,8 @@ lint/R:
 ##| C lint
 ##`-------
 ## TODO(Ishmael): Add C code linters.
+infer: veryclean
+	@infer -- make
 ###############
 ## Benchmark ##
 ###############
