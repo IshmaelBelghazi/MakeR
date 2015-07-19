@@ -213,7 +213,7 @@ check:
 ## Debugging ##
 ###############
 valgrind:
-	@R -d valgrind --vanilla < test_custom
+	@R -d "valgrind --tool=memcheck --leak-check=full --track-origins=yes" --vanilla < test_custom
 cudamemcheck:
 	@cuda-memcheck ./test_custom
 ###################
